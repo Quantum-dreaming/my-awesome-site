@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>QuickHTML - 页面名</title>
+	<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+	<header>
+		<h1>QuickHTML</h1>
+		<nav>
+			<ul>
+				<li><a href="../index.html">主页</a></li>
+				<li><a href="basics.html">HTML基础</a></li>
+				<li><a href="element.html">常用标签</a></li>
+				<li><a href="layout.html">简单布局</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="layout-content">
+		<section class="layout-intro">
+			<h2>页面布局初体验</h2>
+			<p>通过 <code>div</code> 和语义标签，可以让页面变得井井有条。</p >
+	
+			<div class="layout-block">
+				<h3>语义标签</h3>
+				<code>&lt;header&gt;、&lt;main&gt;、&lt;section&gt;、&lt;footer&gt;</code>
+				<div class="layout-preview">
+					<header>Header</header>
+					<main>Main</main>
+					<section>Section</section>
+					<footer>Footer</footer>
+				</div>
+			</div>
+	
+			<div class="layout-block">
+				<h3>盒模型</h3>
+				<code>
+div { padding: 20px; margin: 10px; border: 1px solid #ccc; }
+				</code>
+				<div class="layout-preview" style="border: 1px solid #ccc; padding: 20px; margin: 10px;">
+					盒模型示意：我就是一个盒子
+				</div>
+			</div>
+	
+			<div class="layout-block">
+				<h3>左右分栏（Flex布局）</h3>
+				<code>
+.layout { display: flex; }<br>
+.sidebar { width: 30%; }<br>
+.content { width: 70%; }
+				</code>
+				<div class="layout-preview layout" style="display: flex;">
+					<div class="sidebar" style="background: #e3f2fd; padding: 10px;">边栏</div>
+					<div class="content" style="background: #fff3e0; padding: 10px;">主内容</div>
+				</div>
+			</div>
+	  </section>
+	</main>
+
+
+	<div class="nextpage">
+		<a href="example.html">👉🏻 来看看示例网页吧！</a>
+	</div>
+	
+	<footer>
+		<p>❤️ Tangerine ❤️</p >
+		<p style="font-size: 12px; color: #ccc;">"种一棵树最好的时间是十年前，或者是现在。"</p>
+	</footer>
+</body>
+</html>

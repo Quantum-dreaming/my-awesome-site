@@ -1,0 +1,409 @@
+/*默认内边距和外边距，让所有元素宽高计算都包括padding和border*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*字体用现代系统字体，背景淡蓝，文字主体为深灰，行高1.6，全局内边距20px*/
+body {
+	font-family: 'SimSun',serif;
+	background-color: #e6f7ff;
+	color: #333;
+	line-height: 1.6;
+	padding: 20px;
+}
+/*浅青色背景，内边距，flex布局（主轴两端分散对齐，中轴垂直居中，轻微阴影*/
+header {
+	background-color: lightcyan;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 12px;
+	box-shadow:0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*手写体，字体大，颜色紫蓝，间距，无边距，阴影，颜色和大小过渡动画*/
+header h1 {
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 2.4em;
+	color: #6c63ff;
+	letter-spacing: 2px;
+	margin: 0;
+	padding: 10px 20px;
+	text-shadow: 2px 2px 4px rgba(108, 99, 255, 0.6);
+	transition: color 1.0s ease, transform 1.5s ease;
+}
+header h1:hover {
+	color: #ff4500;
+	cursor: pointer;
+	transform: scale(1.1);
+}
+/*手写体，字号大，颜色珊瑚红，字距稍宽，阴影统一*/
+main h2 {
+	font-family: 'Comic Sans MS';
+	font-size: 2.8em;
+	color: lightcoral;
+	letter-spacing: 2px;
+	margin: 0;
+	padding: 10px 20px;
+	text-shadow: 2px 2px 4px rgba(108, 99, 255, 0.6);
+}
+/*导航栏外框虚线为蓝色带圆角，内部白色白色背景，阴影，去掉默认列表符号，flex排列*/
+nav ul {
+	border: 1.5px solid #ff7f50;
+	border-radius: 10px;
+	padding: 10px 20px;
+	background-color: #fffacd;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	list-style: none;
+	display: flex;
+	margin: 0;
+}
+/*链接去掉下划线，字体颜色深灰加粗，内边距让点击区域变大，圆角按钮，hover时背景亮蓝字白*/
+nav a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+	padding: 6px 12px;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+nav a:hover {
+	background-color: #00aaff;
+	color: white;
+}
+/*页尾分页按钮容器，居中，不贴正文*/
+.nextpage {
+	text-align: center;
+	margin-top: 40px;
+}
+/*样式套在<a>上，模拟按钮，背景紫色，白色字体，粗体显示，圆角，去掉下划线，transition让hover变平滑*/
+.nextpage a {
+	display: inline-block;
+	background-color: #6c63ff;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background 0.3s ease;
+}
+/*鼠标悬浮时背景变深紫一些*/
+.nextpage a:hover {
+	background-color: #4a45cc;
+}
+/*分隔正文，文本居中对齐，灰色调，小字体*/
+footer {
+	margin-top: 60px;
+	text-align: center;
+	color: #aaa;
+	font-size: 14px;
+}
+
+
+/*欢迎部分，上边距，文本居中，背景浅青色，padding较大，圆角与阴影，伪动画元素（初始位置往上30px，半透明紫色背景，圆角，floatblock动画）*/
+.homepage-welcome {
+	margin-top: 40px;
+	text-align: center;
+	background: lightcyan;
+	padding: 30px 20px;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+	position: relative;
+	overflow: hidden;
+}
+.homepage-welcome::before {
+	content: '';
+	position: absolute;
+	top: -30px;
+	left: 10%;
+	width: 60px;
+	height: 60px;
+	background: #6c63ff88;
+	border-radius: 12px;
+	animation: floatBlock 5s ease-in-out infinite;
+}
+@keyframes floatBlock {
+	0%, 100% { transform: translateY(0);}
+	50% { transform: translateY(20px);}
+}
+/*全部图片用闪烁容器框住，圆角，蓝紫、玫粉、青蓝，倾斜135°渐变，容器阴影*/
+.homepage-glow-frame {
+	display: inline-block;
+	border-radius: 12px;
+    padding: 8px;
+	background: linear-gradient(135deg, #6c63ff, #ff69b4, #00ffff);
+	background-size: 400% 400%;
+	animation: glowShift 5s ease infinite;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+@keyframes glowShift {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+/*图片水平排列，块状，圆角，最大宽度100%，高度自动，每个子元素间距20px，垂直方向对齐居中*/
+.homepage-glow-frame img {
+	display: block;
+	border-radius: 8px;
+	max-width: 100%;
+	height: auto;
+}
+.homepage-image-row{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	margin: 40px 0;
+}
+/*手指规格*/
+.homepage-finger{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 300px;
+	height: 200px;
+}
+/*定位相对，左右边距（这段像大便,加了闪烁框之后删掉了），固定宽高，鼠标指针改为手，img绝对铺满容器，过渡动画3秒，圆角10px*/
+.homepage-hover-image {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 150px;
+	width: 350px;
+	height: 200px;
+	cursor: pointer;
+}
+.homepage-hover-image img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: opacity 3.0s ease;
+	border-radius: 10px; 
+}
+/*.normal图片初始显示，在hover时变透明；.hover图片相反，默认透明，hover时显示*/
+.homepage-hover-image .normal {
+	opacity: 1;
+	z-index: 1;
+}
+.homepage-hover-image:hover .normal {
+	opacity: 0;
+}
+.homepage-hover-image .hover {
+	opacity: 0;
+	z-index: 2;
+}
+.homepage-hover-image:hover .hover {
+	opacity: 1;
+}
+
+
+
+/*居中,最大宽度*/
+.basics-content {
+	max-width: 800px;
+	margin: 40px auto;
+}
+/*介绍内容容器，柔和透明背景，圆角+阴影，字体放大*/
+.basics-intro {
+	padding: 30px;
+	background-color: #ffffffcc;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	margin-bottom: 30px;
+	line-height: 1.8;
+	font-size: 18px;
+}
+/*二级标题视觉强化，加紫色左边条（模拟markdown，已删除，改为和主页h2相同样式），腾开位置，字体变为黑体（更正式），删除阴影（太模糊）*/
+.basics-intro h2 {
+	font-family: '黑体';
+	font-size: 30px;
+	color: lightcoral;
+	text-align: center;
+	margin-bottom: 15px;
+	text-shadow: none;
+}
+/*basics和element页的卡片风格，淡灰背景+左侧黑边条，padding内边距，底部拉开距离，hover变灰，动画平滑*/
+.tag-card {
+	background-color: #f9f9f9;
+	border-left: 5px solid #333;
+	padding: 15px 20px;
+	margin-bottom: 20px;
+	transition: background-color 0.5s ease;
+}
+.tag-card:hover {
+	background-color: #e0e0e0;
+}
+/*添加code块，等宽字体，灰底padding区分正文与代码*/
+.tag-card code {
+	display: block;
+	font-family: monospace;
+	margin-top: 10px;
+	background-color: #eee;
+	padding: 10px;
+}
+/*卡片中的小标题，加粗放大，底部距离*/
+.tag-title {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+/*无效果，明天查问题出在哪*/
+/*代码块高亮风，灰底+紫边，overflow-x：auto可解决超长代码换行问题*/
+.code-sample code {
+	display: block;
+	background-color: #f4f4f4;
+	padding: 10px;
+	border-left: 5px solid #6c63ff;
+	font-family: monospace;
+	color: #333;
+	overflow-x: auto;
+}
+/*模拟注释风格*/
+.annotate {
+	color: lightsalmon;
+	font-size: 15px;
+	font-family: '宋体';
+}
+/*有序或无序列表用，左padding缩进，每个列表拉开距离*/
+.tag-list ul {
+	margin-top: 10px;
+	padding-left: 20px;
+}
+.tag-list li {
+	margin-bottom: 8px;
+	font-size: 16px;
+}
+/*彩蛋小框，*/
+.surprise-box {
+	display: inline-block;
+	background-color: #fdf6f9;
+	border: 2px dashed #ff69b4;
+	padding: 20px 30px;
+	border-radius: 12px;
+	color: #333;
+	font-weight: bold;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	font-size: 20px;
+	text-align: center;
+	box-shadow: 0 0 15px rgba(255,105,180,0.3);
+	margin: 30px auto;
+}
+.surprise-box:hover {
+	background-color: #ffe0ef;
+	transform: scale(1.03);
+}
+.secret-text {
+	font-size: 16px;
+	color: #888;
+	margin-top: 12px;
+	transition: all 0.4s ease;
+	display: block;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+/*核心部分，高度展开，让内容滑出来*/
+.toggle:checked ~ .secret-text {
+	max-height: 200px;
+	opacity: 1;
+	margin-top: 12px;
+}
+
+
+.element-content {
+	max-width: 1000px;
+	margin: 40px auto;
+}
+.element-intro {
+	padding: 30px;
+	background-color: #ffffffcc; 
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	margin-bottom: 30px;
+	line-height: 1.8;
+	font-size: 18px;
+}
+/*二级标题视觉强化，加紫色左边条（模拟markdown，不美观，已删除），腾开位置*/
+.element-intro h2 {
+	font-size: 30px;
+	color: lightcoral;
+	padding-left: 10px;
+	margin-bottom: 15px;
+}
+.element-preview {
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #fefefe;
+	border: 2px dashed #6c63ff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+	text-align: center;
+	transition: box-shadow 0.3s ease;
+}
+.element-preview:hover {
+	box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+
+.layout-content {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.layout-intro {
+	padding: 30px;
+	background-color: #ffffffcc; 
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	margin-bottom: 30px;
+	line-height: 1.8;
+	font-size: 18px;
+}
+.layout-block {
+	background-color: #fdfdfd;
+	padding: 20px;
+	margin-bottom: 30px;
+	border-left: 5px solid #6c63ff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.layout-block h3 {
+	color: #6c63ff;
+	margin-bottom: 10px;
+}
+.layout-preview {
+	margin-top: 10px;
+	background-color: #fafafa;
+	padding: 15px;
+	border-radius: 6px;
+	border: 1px dashed #ccc;
+}
+
+/*高亮，橘红色，等宽字体，加粗*/
+.highlight {
+	color: #ff4500; 
+	font-family: 'Courier New', monospace;
+	font-weight: bold;
+}
+
+/*删除线*/
+.strike {
+	text-decoration: line-through;
+	color: #999;
+}
+
+/*
+此段未添加，typing宽度变化，模拟文字逐步出现，blink光标闪烁，半周期变透明
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+}
+@keyframes blink {
+	50% { border-color: transparent; }
+}
+*/

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>QuickHTML - 页面名</title>
+	<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+	<header>
+		<h1>QuickHTML</h1>
+		<nav>
+			<ul>
+				<li><a href="../index.html">主页</a></li>
+				<li><a href="basics.html">HTML基础</a></li>
+				<li><a href="element.html">常用标签</a></li>
+				<li><a href="layout.html">简单布局</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="element-content">
+		<section class="element-intro">
+			<h2>常见HTML标签</h2>
+			<div class="tag-card">
+				<div class="tag-title">链接和图片</div>
+				<code>
+&lt;a href="https://example.com"&gt;点这里&lt;/a&gt;<br>
+&lt;img src="cat.jpg" alt="喵图"&gt;
+				</code>
+			</div>
+			<div class="element-preview">
+				<a href="https://www.bilibili.com/">点击进入bilibili</a>
+				<img src="../img/一只喵.jpg" alt="小猫" width="100px" height="80px">
+			</div>
+			
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;p&gt;：段落标签</div>
+			    <p>基础块，显示一个段落。</p >
+			    <code>
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+				</code>
+			</div>	
+			<div class="element-preview">
+				<p>This is a paragraph.</p>
+			</div>	
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;h1&gt;~&lt;h6&gt;：标题标签</div>
+			    <p>从最大到最小一共6级。</p >
+			    <code>
+&lt;h1&gt;大佬级标题&lt;/h1&gt;<br>
+&lt;h6&gt;边缘人的标题&lt;/h6&gt;
+			    </code>
+			</div>		
+			<div class="element-preview">
+				<h1>大佬级标题</h1>
+				<h6>迷你标题</h6>
+			</div>
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;a&gt;：超链接</div>
+			    <p>点击跳转至另一个页面，不加 <code>href</code> 网页会很单调</p >
+			    <code>
+&lt;a href="https://example.com"&gt;点我去下一个板块/你想浏览的界面。&lt;/a&gt;
+				</code>
+			</div>			
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;img&gt;：图片</div>
+			    <p>丰富页面内容，可以加 <code>src</code> 和 <code>alt</code>组合为</p >
+			    <code>
+&lt;img src="cat.jpg" alt="一只可爱小猫"&gt;
+				</code>
+			</div>		
+			<p>链接和图片开始已有示例，不再重复</p>
+			<br>
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;ul&gt; / &lt;ol&gt; / &lt;li&gt;：列表三件套</div>
+			    <p><code>&lt;ul&gt;</code> 是无序<code>&lt;ol&gt;</code> 是有序<code>&lt;li&gt;</code> 是列表项</p >
+			    <code>
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;咕咕咕&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;继续咕&lt;/li&gt;<br>
+&lt;/ul&gt;
+			    </code>
+			</div>	
+			<div class="element-preview">
+				<ul>
+					<li>咕咕咕</li>
+					<li>继续咕</li>
+				</ul>
+			</div>
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;strong&gt; / &lt;em&gt;：强调标签</div>
+			    <p><code>&lt;strong&gt;</code> 程度较大,效果为加粗<code>&lt;em&gt;</code> 程度较小，效果为斜体</p >
+			    <code>
+&lt;p&gt;这很 &lt;strong&gt;重要&lt;/strong&gt;！&lt;/p&gt;<br>
+&lt;p&gt;我 &lt;em&gt;真的&lt;/em&gt;生气了。&lt;/p&gt;
+			    </code>
+			</div>
+			<div class="element-preview">
+				<p>这很 <strong>重要</strong>！</p>
+				<p>我 <em>真的</em> 生气了。</p>
+			</div>
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;div&gt; / &lt;span&gt;: 这俩是万能块</div>
+			    <p><code>&lt;div&gt;</code> 是块级<code>&lt;span&gt;</code> 用于处理行内内容</p >
+			    <code>
+&lt;div&gt;一个区域&lt;/div&gt;<br>
+&lt;p&gt;这是 &lt;span&gt;加了样式&lt;/span&gt; 的文字&lt;/p&gt;
+			    </code>
+			</div>
+			<div class="element-preview">
+				<p>如本页中每一个<span class="highlight">代码块</span>均为div块</p>
+			</div>
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;br&gt; / &lt;hr&gt;</div>
+			    <p><code>&lt;br&gt;</code> 是换行，<code>&lt;hr&gt;</code> 是分割线</p >
+			    <code>
+一行文字&lt;br&gt;下一行文字&lt;hr&gt;
+			    </code>
+			</div>
+			<div class="element-preview">
+				<p>此页中每一个代码块示例后都在悄悄换行哦(不推荐学习！！！在css文件中为容器设置内边距更佳)</p>
+				<hr>
+				<p>我是分割线</p>
+			</div>
+			
+			<div class="tag-card">
+			    <div class="tag-title">&lt;input&gt; / &lt;textarea&gt; / &lt;button&gt;：三种表单</div>
+			    <p>收集用户信息的工具包（天天用来让你输验证码的那种）</p >
+			    <code>
+&lt;input type="text" placeholder="请输入你的姓名"&gt;&lt;br&gt;<br>
+&lt;textarea&gt;你想说点什么呢？&lt;/textarea&gt;&lt;br&gt;<br>
+&lt;button&gt;提交&lt;/button&gt;
+			    </code>
+			</div>
+			<div class="element-preview">
+				<input type="text" placeholder="请输入你的姓名"><br>
+				<textarea>你想写点什么呢？</textarea><br>
+				<button>提交</button>
+			</div>
+			
+		</section>
+	</main>
+	
+	<div class="nextpage">
+		<a href="layout.html">👉🏻 下一节：简单页面布局 →</a>
+	</div>
+	
+	<footer>
+		<p>❤️ Tangerine ❤️</p >
+		<p style="font-size: 12px; color: #ccc;">"种一棵树最好的时间是十年前，或者是现在。"</p>
+	</footer>
+</body>
+</html>
